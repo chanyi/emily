@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <properties resource="application.properties">
+        <!--优先使用property中的配置-->
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
+    </properties>
+
+    <settings>
+        <!--标准日志输出-->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+<!--        <setting name="logImpl" value="LOG4J"/>-->
+    </settings>
+
+    <typeAliases>
+<!--        <typeAlias type="com.emily.emilyservice.model.Staff" alias="Staff"/>-->
+        <package name="com.emily.emilyservice.model"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/><!-- 单独使用时配置成MANAGED没有事务 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="${spring.datasource.driver}"/>
+                <property name="url" value="${spring.datasource.url}"/>
+                <property name="username" value="${spring.datasource.username}"/>
+                <property name="password" value="${spring.datasource.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="com/emily/emilyservice/mappers/StaffMapper.xml"/>
+    </mappers>
+
+</configuration>
