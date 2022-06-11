@@ -1,11 +1,13 @@
 package com.emily.emilyservice.dao.es;
 
 import com.emily.emilyservice.model.es.Article;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
 
+@Lazy
 @Repository
 public interface ArticleRepository extends ElasticsearchRepository<Article,String> {
 

@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/")
-public class HomeController {
+public class JavaBeanManagerController {
 
-    private final Logger logger = LoggerFactory.getLogger(HomeController.class);
+    private final Logger logger = LoggerFactory.getLogger(JavaBeanManagerController.class);
 
     private HomeService homeService;
 
